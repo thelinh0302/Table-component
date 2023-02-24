@@ -1,0 +1,222 @@
+$minWidth: 50px;
+$minHeight: 56px;
+
+.core-list {
+  display: block;
+  width: 100%;
+  * {
+    box-sizing: border-box;
+  }
+  &__sort {
+    background: '#fff';
+    text-align: center;
+    cursor: pointer;
+
+    &--icon {
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .text {
+      margin-right: 10px;
+      text-transform: uppercase;
+    }
+  }
+  &__header {
+    display: flex;
+    flex-direction: row;
+  }
+  &__header_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    min-height: 42px;
+    min-width: $minWidth;
+    flex: 1;
+    flex-basis: var(--itemWidth);
+    &.has-icon {
+      .core-node {
+        padding-left: 1.5rem !important;
+      }
+    }
+    .core-node {
+      color: #818a91;
+      font-size: 0.75rem !important;
+      text-align: inherit;
+      text-transform: capitalize;
+      flex: 1;
+      position: relative;
+    }
+    &.toggle {
+      flex-basis: 60px;
+      flex-grow: 0;
+      margin-left: auto;
+    }
+
+    .core-list__sort--btn {
+      display: inline-flex;
+      margin-right: 0.4rem;
+      padding: 0;
+      background: transparent;
+      border: none;
+      align-self: flex-end;
+      margin-bottom: 0.525em;
+      position: absolute;
+      top: 9px;
+      text-align: center;
+      cursor: pointer;
+      left: 5px;
+      outline: none !important;
+      appearance: none;
+
+      svg {
+        fill: '#818A91' !important;
+      }
+    }
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    min-width: $minWidth;
+    min-height: $minHeight;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(206, 213, 220, 0.65);
+
+    & + .core-list__item {
+      margin-top: 1rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .core-node {
+      display: flex;
+      min-width: $minWidth;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      flex-wrap: wrap;
+      flex: 1;
+      flex-basis: var(--itemWidth);
+
+      &.toggle {
+        flex-basis: 60px;
+        flex-grow: 0;
+        margin-left: auto;
+        align-items: center;
+      }
+    }
+    &-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      min-height: $minHeight;
+    }
+  }
+  .core-node {
+    font-size: 1rem;
+    padding: 0.725em 1rem 0.525em;
+    line-height: 1.5em;
+    &#node-primary {
+      position: relative;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border: 2px solid var(--color-mint);
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        left: 100%;
+        top: 1.55em;
+
+        // transform: translateY(-50%);
+        z-index: 10;
+      }
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        border-left: 1px solid #e7ecef;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: calc(100% + 3px);
+        z-index: 9;
+      }
+    }
+  }
+}
+.core-paginate-Table {
+  width: 100%;
+  float: right;
+}
+
+/* .item must be first */
+.item {
+  align-items: center;
+  color: #808e9b;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  height: 24px;
+  justify-content: center;
+  width: 24px;
+}
+
+.disabled-page {
+  color: #808e9b;
+}
+
+.active {
+  border: solid 1px #00b0b2;
+  border-radius: 5px;
+  color: #158793;
+}
+
+.break-me {
+}
+
+.next {
+  font-size: 4px;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 150px;
+}
+
+.pagination {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 34px;
+  justify-content: center;
+  list-style-type: none;
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.pagination-page {
+  font-weight: 700;
+}
+
+.previous {
+  font-size: 4px;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  width: 150px;
+}

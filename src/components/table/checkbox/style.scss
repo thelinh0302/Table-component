@@ -1,0 +1,22 @@
+.cui-field_checkbox {
+  & + .cui-field_control__label {
+    cursor: initial;
+    display: flex;
+
+    &:before {
+      flex: 1;
+      min-width: 1.5rem;
+      min-height: 1.5rem;
+      max-width: 1.5rem;
+      max-height: 1.5rem;
+    }
+  }
+
+  &__misc {
+    margin-left: 2rem;
+
+    span {
+      display: inline-block;
+    }
+  }
+}
